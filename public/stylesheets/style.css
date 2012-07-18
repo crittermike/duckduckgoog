@@ -2,27 +2,46 @@ body {
   text-align: center;
   background: transparent url(../images/bodybg.png) repeat;
   font-family: 'Belgrano', serif;
+  color: #888;
+}
+a {
+  color: #888;
+}
+a:hover {
+  color: #D83C3C;
 }
 #container {
+  width: 470px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+#container h1 {
+  text-align: center;
+}
+#search-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -130px;
-  margin-left: -240px;
+  margin-top: -150px;
+  margin-left: -246px;
+}
+#search-container p {
+  margin-top: 45px;
 }
 h1 {
+  color: #222;
   font-weight: normal;
   font-size: 60px;
   margin-top: 0;
 }
-form:before, form:after {
+form#search-form:before, form#search-form:after {
   content:"";
   display:table;
 }
-form:after {
+form#search-form:after {
   clear:both;
 }
-form {
+form#search-form {
   zoom:1;
   width: 450px;
   padding: 15px;
@@ -36,43 +55,42 @@ form {
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
   box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
 }
-form input {
+form#search-form input {
   font-family: 'Belgrano', serif;
   width: 330px;
   height: 20px;
   padding: 10px 5px;
   float: left;
   font-size: 15px;
-  font-weight: bold;
   border: 0;
   background: #eee;
   -moz-border-radius: 3px 0 0 3px;
   -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-form input:focus {
+form#search-form input:focus {
   outline: 0;
   background: #fff;
   -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
   -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
   box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
 }
-form input::-webkit-input-placeholder {
+form#search-form input::-webkit-input-placeholder {
   color: #999;
   font-weight: normal;
   font-style: italic;
 }
-form input:-moz-placeholder {
+form#search-form input:-moz-placeholder {
   color: #999;
   font-weight: normal;
   font-style: italic;
 }
-form input:-ms-input-placeholder {
+form#search-form input:-ms-input-placeholder {
   color: #999;
   font-weight: normal;
   font-style: italic;
 }
-form button {
+form#search-form button {
   overflow: visible;
   position: relative;
   float: right;
@@ -83,21 +101,21 @@ form button {
   width: 110px;
   font: bold 15px/40px 'Belgrano', serif;
   color: #fff;
-  text-transform: uppercase;
+  text-transform#search-form: uppercase;
   background: #d83c3c;
   -moz-border-radius: 0 3px 3px 0;
   -webkit-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
   text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
 }
-form button:hover{
+form#search-form button:hover{
   background: #e54040;
 }
-form button:active,
-form button:focus{
+form#search-form button:active,
+form#search-form button:focus{
   background: #c42f2f;
 }
-form button:before {
+form#search-form button:before {
   content: '';
   position: absolute;
   border-width: 8px 8px 8px 0;
@@ -106,13 +124,26 @@ form button:before {
   top: 12px;
   left: -6px;
 }
-form button:hover:before{
+form#search-form button:hover:before{
   border-right-color: #e54040;
 }
-form button:focus:before{
+form#search-form button:focus:before{
   border-right-color: #c42f2f;
 }
-form button::-moz-focus-inner {
+form#search-form button::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  opacity: 0.4;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+#footer:hover {
+  opacity: 1;
 }

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  #container
+    h1 DuckDuckGoog
+    h2 Set your default browser search!
+    p If you want to make DuckDuckGoog your browser's default search, right click the box below and click "Add As Search Engine" (Chrome) or "Add a keyword for this search" (Firefox).
+    form(method='get', action='/')
+      input(type='search', name='q', required, value='Right click in here')
+      button(type='submit') Search
+    p After adding it, open up your browser's search engine settings to make it the default and you should be good to go!
+    p If you have issues, feel free to 
+      a(href="mailto:mikecrittenden@gmail.com") email me.
+

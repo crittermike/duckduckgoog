@@ -1,8 +1,16 @@
 extends layout
 
 block content
-  #container
+  #search-container
     h1 DuckDuckGoog
-    form(method='get', action='')
+    form#search-form(method='get', action='')
       input(type='text', name='q', required, value=query, placeholder='Whatcha looking for?')
       button(type='submit') Search
+    p Searches Google and !bangs <a href="http://duckduckgo.com">DuckDuckGo</a>. <a href="/browser">Tell your browser</a>!
+  #footer
+    p Lovingly built by 
+      a(href="http://mikethecoder.com") Mike Crittenden
+      |  | 
+      a(href="http://github.com/mikecrittenden/duckduckgoog") Source on GitHub
+      |  | 
+      a(href="mailto:mikecrittenden@gmail.com") Email me
