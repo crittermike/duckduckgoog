@@ -4,7 +4,7 @@ block content
   #search-container
     h1 DuckDuckGoog
     form#search-form(method='get', action='')
-      input(type='text', name='q', required, value=query, placeholder='Whatcha looking for?')
+      input(type='text', id='search-input', name='q', required, value=query, placeholder='Whatcha looking for?')
       button(type='submit') Search
     p Searches Google and !bangs <a href="http://duckduckgo.com">DuckDuckGo</a>. <a href="/browser">Tell your browser</a>!
   #footer
