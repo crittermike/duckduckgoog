@@ -36,6 +36,10 @@ app.get('/browser', function(req, res) {
   res.render('browser');
 });
 
+app.get('/privacy', function(req, res) {
+  res.render('privacy');
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
