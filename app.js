@@ -20,7 +20,6 @@ app.configure('development', function(){
 });
 
 app.get('/', function(req, res) {
-  var query = "";
   if (req.query["q"]) {
     query = req.query["q"];
     if (query.match(/![A-Za-z0-9]+/)) {
@@ -29,7 +28,7 @@ app.get('/', function(req, res) {
       res.redirect('https://encrypted.google.com/search?q=' + query);
     }
   }
-  res.render('index', { query: req.query["q"] });
+  res.render('index');
 });
 
 app.get('/browser', function(req, res) {
