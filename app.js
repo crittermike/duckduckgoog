@@ -7,6 +7,7 @@ app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('view engine', 'jade');
   app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
+  app.use(express.logger());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
@@ -15,12 +16,6 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
-  app.use(express.logger('dev'));
-});
-
-app.configure('production', function(){
-  app.use(express.errorHandler());
-  app.use(express.logger());
 });
 
 app.get('/', function(req, res) {
