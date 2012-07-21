@@ -23,8 +23,10 @@ app.get('/', function(req, res) {
   if (req.query["q"]) {
     query = req.query["q"];
     if (query.match(/![A-Za-z0-9]+/)) {
+      console.log('Queried DuckDuckGo');
       res.redirect('https://duckduckgo.com?q=' + query);
     } else {
+      console.log('Queried Google');
       res.redirect('https://encrypted.google.com/search?q=' + query);
     }
   }
