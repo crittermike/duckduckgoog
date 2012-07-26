@@ -6,11 +6,23 @@ block content
     h2 Set your default browser search!
     h3 Chrome
     p Just by visiting the site, Chrome should have already stored it as a search engine. Just go to Chrome's search engine settings and find duckduckgoog.com in that list, then click "Make Default" next to it.
+
     h3 Firefox
     p Click the little dropdown arrow in the Firefox search bar, then click "Add DuckDuckGoog Search" to save it. Note that you might have to click it again to make it your default.
+
     h3 Other Browsers & Launchers 
     p DuckDuckGoog should be easy to add to any browser or launcher (Alfred, GnomeDo, etc.) that supports custom searches. 
     p Just use this search string in your browser/launcher's search engine options to create a custom search: "http://www.duckduckgoog.com?q=SEARCH" (replace SEARCH with whatever your browser/launcher expects the placeholder to be).
+
+    h3 Using a different (localized) Google URL
+    p If you would rather make DuckDuckGoog search google.com.au or google.co.jp etc., than the default encrypted.google.com, then just include that in your search URL, using something like 
+    code http://www.duckduckgoog.com?q=searchstring&google=custom-google-url.com
+    p For example, if you use Chrome and want to default your Google search to Google Japan, use this:
+    code http://www.duckduckgoog.com?q=%s&google=google.co.jp
+    p Note that if you use Firefox, you don't have the option to manually change search engine URLs like that, so you'll need to install an addon of something like 
+      a(href='http://mycroft.mozdev.org/index.html') Mycroft
+      |  that allows you to do this.
+
     p If you have issues, feel free to 
       a(href="mailto:mikecrittenden@gmail.com") email me.
 

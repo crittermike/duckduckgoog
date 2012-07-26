@@ -10,6 +10,9 @@ a {
 a:hover {
   color: #D83C3C;
 }
+code {
+  color: black;
+}
 #container {
   width: 470px;
   margin: 30px auto 0;

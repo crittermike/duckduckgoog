@@ -31,7 +31,11 @@ app.get('/', function(req, res) {
       res.redirect('https://duckduckgo.com?q=' + query);
     } else {
       console.log('Queried Google');
-      res.redirect('https://encrypted.google.com/search?q=' + query);
+      if (req.query['google']) {
+        res.redirect('https://' + req.query['google'] + '/search?q=' + query);
+      } else {
+        res.redirect('https://encrypted.google.com/search?q=' + query);
+      }
     }
   }
   res.render('index');
