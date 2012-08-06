@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-    <ShortName>DuckDuckGoog</ShortName>
-    <LongName>DuckDuckGoog Web Search</LongName>
+    <ShortName>DuckDuckGoog With Suggestions</ShortName>
+    <LongName>DuckDuckGoog Web Search With Google Search Suggestions</LongName>
     <Description>DuckDuckGoog passes !bang's to DuckDuckGo and everything else to Google</Description>
     <InputEncoding>UTF-8</InputEncoding>
     <OutputEncoding>UTF-8</OutputEncoding>
@@ -15,5 +15,7 @@
     <Query role="example" searchTerms="Apple !i"/>
     <Image height="16" width="16" type="image/vnd.microsoft.icon">http://www.duckduckgoog.com/favicon.ico</Image>
     <Url type="text/html" template="http://www.duckduckgoog.com/?q={searchTerms}"/>
-    <Url type="application/opensearchdescription+xml" rel="self" template="http://duckduckgoog.com/opensearch.xml" />
+    <Url type="application/x-suggestions+json" template="http://google.com/complete/search?output=firefox&amp;q={searchTerms}"/>
+    <Url rel="suggestions" type="application/x-suggestions+xml" template="http://google.com/complete/search?q={searchTerms}&amp;client=ie8&amp;mw={ie:maxWidth}&amp;sh={ie:sectionHeight}&amp;rh={ie:rowHeight}&amp;inputencoding={inputEncoding}&amp;outputencoding={outputEncoding}"/>
+    <Url type="application/opensearchdescription+xml" rel="self" template="http://duckduckgoog.com/opensearchsuggest.xml" />
 </OpenSearchDescription>
