@@ -6,13 +6,19 @@ block content
     h2 Set your default browser search!
     hr
     h3 Chrome
+    p
+      strong Without Search Suggestions
     p Just by visiting the site, Chrome should have already stored it as a search engine. Just go to Chrome's search engine settings and find duckduckgoog.com in that list, then click "Make Default" next to it.
+    p
+      strong With Search Suggestions
+    p Unfortunately Chrome can't auto-discover more than one search per site, so if you want to use search suggestions, click 
+      a(href='#', onclick='window.external.AddSearchProvider("http://duckduckgoog.com/opensearchsuggest.xml");') this link.
     hr
 
     h3 Firefox
     p 
       strong Search Bar
-    p Click the little dropdown arrow in the Firefox search bar, then click "Add DuckDuckGoog Search" to save it. Note that you might have to click it again to make it your default.
+    p Click the little dropdown arrow in the Firefox search bar, then click "Add DuckDuckGoog" to save it--note that you can choose to use search suggestions or not. You might have to click it again to make it your default.
     p
       strong Awesomebar
     p Visit 
