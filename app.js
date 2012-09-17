@@ -26,15 +26,16 @@ app.configure('production', function(){
 app.get('/', function(req, res) {
   if (req.query["q"]) {
     query = req.query["q"];
+    encQuery = encodeURIComponent(query);
     if (query.match(/![A-Za-z0-9]+/)) {
       console.log('Queried DuckDuckGo');
-      res.redirect('https://duckduckgo.com?q=' + query);
+      res.redirect('https://duckduckgo.com?q=' + encQuery);
     } else {
       console.log('Queried Google');
       if (req.query['google']) {
-        res.redirect('https://' + req.query['google'] + '/search?q=' + query);
+        res.redirect('https://' + req.query['google'] + '/search?q=' + encQuery);
       } else {
-        res.redirect('https://encrypted.google.com/search?q=' + query);
+        res.redirect('https://encrypted.google.com/search?q=' + encQuery);
       }
     }
   }
