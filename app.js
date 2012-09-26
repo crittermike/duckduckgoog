@@ -35,7 +35,7 @@ app.get('/', function(req, res) {
       if (req.query['google']) {
         res.redirect('https://' + req.query['google'] + '/search?q=' + encQuery);
       } else {
-        res.redirect('https://encrypted.google.com/search?q=' + encQuery);
+        res.redirect('https://www.google.com/search?q=' + encQuery);
       }
     }
   }
