@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
   if (req.query["q"]) {
     query = req.query["q"];
     encQuery = encodeURIComponent(query);
-    if (query.match(/![A-Za-z0-9]+/)) {
+    if (query.match(/![A-Za-z0-9]+/) || query.substring(0, 2) === "! " || query.substring(0, 1) === "\\") {
       console.log('Queried DuckDuckGo');
       res.redirect('https://duckduckgo.com?q=' + encQuery);
     } else {
