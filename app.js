@@ -33,7 +33,7 @@ app.get('/', function(req, res) {
     } else {
       console.log('Queried Google');
       if (req.query['google']) {
-        res.redirect('https://' + req.query['google'] + '/search?q=' + encQuery);
+        res.redirect('http://' + req.query['google'] + '/search?q=' + encQuery);
       } else {
         res.redirect('https://www.google.com/search?q=' + encQuery);
       }
