@@ -46,6 +46,22 @@ block content
       a(href='http://mycroft.mozdev.org/index.html') Mycroft
       |  that allows you to do this.
 
+    hr
+    h3 Using a custom search engine
+    p If you would like to use another search engine other than google (Like Bing or Yahoo), simply put the url and a 
+      code  %s
+      |  where the search goes, like so:
+    code http://www.duckduckgoog.com?q=searchstring&searchengine=http://searchengine.com?query=%s
+    p For example, if you use Chrome and want to default your search to Yahoo, use this:
+    code http://www.duckduckgoog.com?q=%s&searchengine=http://yahoo.com?q=%s
+    p Make sure to put the 
+      code  http:// 
+      |  or the 
+      code  https://
+      |  before the URL.
+    p Also be aware that DuckDuckGoog will default to google.com if there is an error in the syntax.
+
+    hr
     p If you have issues, feel free to 
       a(href="mailto:mikecrittenden@gmail.com") email me.
 

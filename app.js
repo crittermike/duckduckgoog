@@ -27,16 +27,33 @@ app.get('/', function(req, res) {
   if (req.query["q"]) {
     query = req.query["q"];
     encQuery = encodeURIComponent(query);
+
     if (query.match(/![A-Za-z0-9]+/) || query.substring(0, 2) === "! " || query.substring(0, 1) === "\\") {
+
       console.log('Queried DuckDuckGo');
       res.redirect('https://duckduckgo.com?q=' + encQuery);
+
+    } else if (req.query['searchengine']) {
+
+      console.log('Queried custom search engine');
+      searchEngine = req.query['searchengine'];
+      if (searchEngine.search() != -1 && (searchEngine.lastIndexOf('http://', 0) === 0 || searchEngine.lastIndexOf('https://', 0) === 0)) {
+        customSearchURL = searchEngine.replace(/%s/g, encQuery);
+        res.redirect(customSearchURL);
+      } else {
+        console.log('Error in search engine syntax. Using Google.');
+        res.redirect('https://www.google.com/search?q=' + encQuery);
+      }
+
     } else {
+
       console.log('Queried Google');
       if (req.query['google']) {
-        res.redirect('http://' + req.query['google'] + '/search?q=' + encQuery);
+        res.redirect('https://' + req.query['google'] + '/search?q=' + encQuery);
       } else {
         res.redirect('https://www.google.com/search?q=' + encQuery);
       }
+
     }
   }
   res.render('index');
