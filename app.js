@@ -38,7 +38,7 @@ app.get('/', function(req, res) {
       console.log('Queried custom search engine');
       searchEngine = req.query['searchengine'];
       if (searchEngine.search() != -1 && (searchEngine.lastIndexOf('http://', 0) === 0 || searchEngine.lastIndexOf('https://', 0) === 0)) {
-        customSearchURL = searchEngine.replace(/%s/g, encQuery);
+        customSearchURL = searchEngine.replace(/%q/g, encQuery);
         res.redirect(customSearchURL);
       } else {
         console.log('Error in search engine syntax. Using Google.');
