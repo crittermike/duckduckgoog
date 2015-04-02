@@ -1,27 +1,29 @@
-var express = require('express'),
+var express = require('express')
+  , bodyParser = require('body-parser')
+  , methodOverride = require('method-override')
+  , errorHandler = require('errorhandler')
+  , favicon = require('serve-favicon')
+  , logger = require('morgan')
     http = require('http');
+
 
 var app = express();
 
-app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
-  app.set('view engine', 'jade');
-  app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
-});
+app.set('port', process.env.PORT || 3000);
+app.set('view engine', 'jade');
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(bodyParser.json());
+app.use(methodOverride());
+app.use(express.static(__dirname + '/public'));
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-  app.use(express.logger('dev'));
-});
-
-app.configure('production', function(){
-  app.use(express.errorHandler());
-  app.use(express.logger());
-});
+var env = process.env.NODE_ENV || 'development';
+if (env == "development") {
+  app.use(errorHandler());
+  app.use(logger('dev'));
+} else {
+  app.use(errorHandler());
+  app.use(logger());
+}
 
 app.get('/', function(req, res) {
   if (req.query["q"]) {
@@ -55,8 +57,10 @@ app.get('/', function(req, res) {
       }
 
     }
+  } else {
+    res.render('index');  
   }
-  res.render('index');
+  
 });
 
 app.get('/browser', function(req, res) {
