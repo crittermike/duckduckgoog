@@ -1,4 +1,4 @@
-doctype 5
+doctype html
 html
   head
     title DuckDuckGoog
@@ -7,7 +7,7 @@ html
     link(rel='search', type='application/opensearchdescription+xml', href='/opensearch.xml', title='DuckDuckGoog Without Suggestions')
     link(rel='search', type='application/opensearchdescription+xml', href='/opensearchsuggest.xml', title='DuckDuckGoog With Suggestions')
     meta(name='description', content='DuckDuckGoog lets you use DuckDuckGo for bang queries and Google for everything else, so you get the best of both worlds.')
-    script(type='text/javascript')
+    script.
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-6322775-20']);
       _gaq.push(['_trackPageview']);
@@ -16,7 +16,7 @@ html
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    script(type='text/javascript')
+    script.
       function focusSearch() {
         if (document.getElementById("search-input")) {
           document.getElementById("search-input").focus();
