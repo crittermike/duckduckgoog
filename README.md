@@ -1,3 +1,5 @@
+### OUTDATED: USE https://github.com/JadoJodo/duckduckgoog NOW
+
 duckduckgoog
 ============
 
